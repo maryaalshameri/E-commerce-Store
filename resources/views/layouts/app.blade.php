@@ -32,13 +32,17 @@
 
 </head>
 <body class="full-wrapper">
+@include('partials.header')
+
+
+<main id="main">@yield('content')
+
+</main>
+@include('partials.Services')
 
 
 
-<main id="main">@yield('content')</main>
-
-
-
+@include('partials.footer')
 
 
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->
