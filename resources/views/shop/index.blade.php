@@ -47,7 +47,7 @@
                                     <!-- Hero Caption -->
                                     <div class="hero__caption">
                                         <h1>fashion<br>changing<br>always</h1>
-                                        <a href="shop.html" class="btn">Shop Now</a>
+                                        <a href="/products" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                     <!-- Hero Caption -->
                                     <div class="hero__caption">
                                         <h1>fashion<br>changing<br>always</h1>
-                                        <a href="shop.html" class="btn">Shop Now</a>
+                                        <a href="/products" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                                     <!-- Hero Caption -->
                                     <div class="hero__caption">
                                         <h1>fashion<br>changing<br>always</h1>
-                                        <a href="shop.html" class="btn">Shop Now</a>
+                                        <a href="/products" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -86,4 +86,7 @@
         </div>
         <!-- End Hero -->
 </section>
+@include('partials.category')
+@include('partials.about')
+@include('partials.collection')
 @endsection

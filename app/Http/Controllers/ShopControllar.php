@@ -10,4 +10,6 @@ class ShopControllar extends Controller
     {
        return view('shop.index');
     }
+
+   
 }
