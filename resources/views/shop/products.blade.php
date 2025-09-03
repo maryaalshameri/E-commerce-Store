@@ -132,7 +132,8 @@
                                             </div>
                                         </div>
                                         <div class="popular-caption">
-                                         <h3><a href="{{ url('/product/'.$product['id']) }}">{{ $product['name'] }}</a></h3>
+                                         <h3><a href="{{ url('/products/'.$product['id']) }}">{{ $product['name'] }}</a></h3>
+                                         <!-- "{{ route('products.show', $product['id']) }}" -->
                                          <div class="rating mb-10">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
