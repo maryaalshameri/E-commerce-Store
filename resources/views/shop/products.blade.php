@@ -24,6 +24,10 @@
                 </div>
             </div>
         </div>
+        {{-- عرض رسالة نجاح --}}
+                @if(session('success'))
+                    <div style="color: green;">{{ session('success') }}</div>
+                @endif
         <!-- listing Area Start -->
         <div class="category-area">
             <div class="container">
@@ -119,7 +123,7 @@
                                                 @else
                                                 <div class="ribbon new"><span>New</span></div>
                                                 @endif
-                                            <img src="{{ asset($product['image']) }}" alt="{{ $product['name'] }}">
+                                            <img src="{{ asset($product->image_path) }}" alt="{{ $product['name'] }}">
                                             <div class="favorit-items">
                                                 <!-- <span class="flaticon-heart"></span> -->
                                                  @if($product['on_sale'])
@@ -132,7 +136,7 @@
                                             </div>
                                         </div>
                                         <div class="popular-caption">
-                                         <h3><a href="{{ url('/products/'.$product['id']) }}">{{ $product['name'] }}</a></h3>
+                                         <h3><a href="{{ route('products.show', $product['id']) }}">{{ $product['name'] }}</a></h3>
                                          <!-- "{{ route('products.show', $product['id']) }}" -->
                                          <div class="rating mb-10">
                                             <i class="fas fa-star"></i>
