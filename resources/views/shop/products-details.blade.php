@@ -22,6 +22,10 @@
                 </div>
                 </div>
                 </div>
+                        {{-- عرض رسالة نجاح --}}
+                @if(session('success'))
+                    <div style="color: green;">{{ session('success') }}</div>
+                @endif
                 <!-- breadcrumb End-->
                 <!--?  Details start -->
                 <div class="directory-details pt-padding">

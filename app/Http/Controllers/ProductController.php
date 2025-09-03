@@ -53,4 +53,41 @@ class ProductController extends Controller
 
        return redirect()->route('products.index')->with('success','Product created successfully');
       }
+
+
+      public function edit($id)
+        {
+        $product = Product::findOrFail($id);
+        return view('shop.edit-product', compact('product'));
+        }
+
+
+        public function update(Request $request, $id)
+        {
+        $product = Product::findOrFail($id);
+
+
+        $data = $request->validate([
+        'name' => 'required|string|min:2|max:100',
+        'description' => 'required|string|max:1000',
+        'price' => 'required|numeric|min:0',
+        'on_sale' => 'nullable|boolean',
+        'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        ]);
+
+
+        if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('products', 'public');
+        $data['image_path'] = 'storage/'.$path;
+        }
+
+
+        $data['on_sale'] = (bool)($data['on_sale'] ?? false);
+
+
+        $product->update($data);
+
+
+        return redirect()->route('products.show', $product->id)->with('success','Product updated successfully');
+        }
 }
