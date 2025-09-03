@@ -1,7 +1,7 @@
       @extends('layouts.app')
 
 
-@section('title', 'تفاصيل المنتج')
+@section('title', {{ $product['name'] }})
 
 
 @section('content')
