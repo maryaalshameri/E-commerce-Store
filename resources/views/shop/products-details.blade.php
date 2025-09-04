@@ -64,6 +64,24 @@
                               
                             </div>
                         </div>
+                              <div class="actions mt-4 d-flex">
+                                <!-- زر التعديل -->
+                                <a href="{{ route('products.edit', $product->id) }}" 
+                                class="btn btn-warning btn-sm me-2 d-flex align-items-center">
+                                    <i class="fas fa-edit me-1"></i> Edit
+                                </a>
+
+                                <!-- زر الحذف -->
+                                <form action="{{ route('products.destroy', $product->id) }}" 
+                                    method="POST" 
+                                    onsubmit="return confirm('Are you sure you want to delete this product?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm d-flex align-items-center">
+                                        <i class="fas fa-trash-alt me-1"></i> Delete
+                                    </button>
+                                </form>
+                            </div>
 
                 </div>
             </div>
