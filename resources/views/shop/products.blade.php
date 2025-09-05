@@ -39,13 +39,20 @@
                         </div>
                     </div>
                 </div>
+                             
                 <div class="row">
                     <!--? Left content -->
                     <div class="col-xl-3 col-lg-3 col-md-4 ">
+
                         <!-- Job Category Listing start -->
                         <div class="category-listing mb-50">
+                                <a href="{{ route('products.create') }}" 
+                                class="btn btn-warning btn-sm m-2 d-flex align-items-center">
+                                    <i class="fas fa-edit me-1"></i> add product
+                                </a> 
                             <!-- single one -->
                             <div class="single-listing">
+
                                 <!-- Select City items start -->
                                 <div class="select-job-items2">
                                     <select name="select2">
@@ -108,8 +115,10 @@
                         </div>
                         <!-- Job Category Listing End -->
                     </div>
+                
                     <!--?  Right content -->
                     <div class="col-xl-9 col-lg-9 col-md-8 ">
+
                         <!--? New Arrival Start -->
                         <div class="new-arrival new-arrival2">
                             <div class="row">
