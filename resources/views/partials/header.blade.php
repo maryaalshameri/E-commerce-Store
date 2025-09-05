@@ -35,7 +35,7 @@
                                                 <li><a href="product_details.html">Product Details</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="/Contact">Contact</a></li>
+                                        <li><a href="/contact">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>   
