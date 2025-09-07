@@ -22,12 +22,12 @@
                 <td>{{ $p->category->name ?? '-' }}</td>
                 <td>${{ number_format($p->price,2) }}</td>
                 <td>{{ $p->on_sale ? 'نعم' : 'لا' }}</td>
-                <td class="d-flex gap-2">
-                    <a class="btn btn-sm btn-info" href="{{ route('products.show',$p) }}">عرض</a>
-                    <a class="btn btn-sm btn-warning" href="{{ route('products.edit',$p) }}">تعديل</a>
+                <td class="d-flex gap-2 m-4 justify-center">
+                    <a class="btn btn-sm btn-info m-4" href="{{ route('products.show',$p) }}">عرض</a>
+                    <a class="btn btn-sm btn-warning m-4" href="{{ route('products.edit',$p) }}">تعديل</a>
                     <form method="POST" action="{{ route('products.destroy',$p) }}" onsubmit="return confirm('حذف المنتج؟')">
                         @csrf @method('DELETE')
-                        <button class="btn btn-sm btn-danger" type="submit">حذف</button>
+                        <button class="btn btn-sm btn-danger  m-4" type="submit">حذف</button>
                     </form>
                 </td>
             </tr>
@@ -36,7 +36,7 @@
         @endforelse
         </tbody>
     </table>
-
-    {{ $products->links() }}
+<!-- 
+    {{ $products->links() }} -->
 </div>
 @endsection
