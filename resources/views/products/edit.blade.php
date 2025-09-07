@@ -8,7 +8,7 @@
     @endif
 
     <form method="POST" enctype="multipart/form-data"
-          action="{{ isset($product) ? route('products.update',$product) : route('products.store') }}">
+          action="{{ isset($product) ? route('products.update', $product->id) : route('products.store') }}">
         @csrf
         @if(isset($product)) @method('PUT') @endif
 
