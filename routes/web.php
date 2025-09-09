@@ -48,6 +48,8 @@ Route::middleware(['auth', 'can:access-admin-panel'])
     ->prefix('admin')
     ->group(function () {
         Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/products', [AdminController::class, 'products'])->name('admin.products');
+        Route::get('/categories', [AdminController::class, 'categories'])->name('admin.categories');
     });
 
 require __DIR__.'/auth.php';
