@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 class AdminController extends Controller
-{
+{      
         public function dashboard()
     {
         $productCount  = Product::count();
         $categoryCount = Category::count();
 
         return view('admin.dashboard', compact('productCount','categoryCount'));
+        // dd(auth()->user()->is_admin);
     }
 
     // عرض المنتجات في لوحة الإدارة
