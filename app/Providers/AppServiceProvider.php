@@ -22,15 +22,5 @@ class AppServiceProvider extends ServiceProvider
     {
           
 
-Gate::define('access-admin-panel', function ($user) {
-    if ($user->is_admin) {
-        return true;
-    } else {
-        \Log::warning("Unauthorized access attempt by user_id: {$user->id}");
-        abort(403); 
-        // return false;
-
-    }
-});
     }
 }
