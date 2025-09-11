@@ -5,6 +5,9 @@ use App\Http\Controllers\StoreControllar;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
+use App\Mail\WelcomeEmail;
+use Illuminate\Support\Facades\Mail;
+use App\Models\User;
 // Route::get('/',[ShopControllar::class,'index']);
 // Route::get('/products',[StoreControllar::class,'products']);
 
@@ -51,5 +54,12 @@ Route::middleware(['auth', 'can:access-admin-panel'])
         Route::get('/products', [AdminController::class, 'products'])->name('admin.products');
         Route::get('/categories', [AdminController::class, 'categories'])->name('admin.categories');
     });
+
+
+Route::get('/send-welcome', function () {
+    $user = User::first(); // أي مستخدم تجريبي
+    Mail::to($user->email)->send(new WelcomeEmail($user));
+    return "Welcome email sent!";
+});
 
 require __DIR__.'/auth.php';
