@@ -62,4 +62,16 @@ Route::get('/send-welcome', function () {
     return "Welcome email sent!";
 });
 
+Route::get('/test-notification', function () {
+    $admin = User::where('is_admin', true)->first();
+    $order = Order::first(); // اختبر بأول طلب
+
+    if ($admin && $order) {
+        $admin->notify(new NewOrderNotification($order));
+        return "✅ Notification sent to admin!";
+    }
+
+    return "⚠️ No admin or order found.";
+});
+
 require __DIR__.'/auth.php';
